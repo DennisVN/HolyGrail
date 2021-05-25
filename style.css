@@ -14,3 +14,10 @@ body {
     position: center;
     padding: 20px;
 }
+
+@media all and (min-width: 768px) {
+    #picca {
+        width: auto%;
+        height: 100%;
+    } 
+}
