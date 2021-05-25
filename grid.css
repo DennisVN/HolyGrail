@@ -2,38 +2,44 @@
 
 /* RESET */
 * {
-    box-sizing: border-box;
+    box-sizing: content-box;
     padding: 0;
     margin: 0;
 }
 /* COLORS and FONTS */
 body {
-    color: white;
+    color: rgb(252, 249, 251);
     text-align: center;
     font-size: 24px;
-    line-height: 3;
 }
 header {
-    background: rgb(12, 12, 12);
+    background: rgba(12, 12, 12, 0.836);
+    grid-area: header;
 }
 
 nav {
-    background: forestgreen;
+    background: rgba(26, 106, 138, 0.651);
+    color: pink;
+    grid-area: nav;
 }
 
 main {
     background: darkslateblue;
+    grid-area: content;
 }
 
 aside {
-    background: dodgerblue;
+    background: rgba(30, 143, 255, 0.548);
+    grid-area: side;
 }
 nav {
-    background: forestgreen;
+    background: rgba(97, 39, 131, 0.527);
+    grid-area: nav;
 }
 
 footer {
-    background: deeppink;
+    grid-area: footer;
+    background: rgba(202, 235, 11, 0.959);
     position: fixed;
     left: 0;
     bottom: 0;
@@ -42,37 +48,41 @@ footer {
     text-align: center;
 }
 
-/* mobile flexbox*/
+/* mobile grid*/
 .container {
     display: grid;
-    min-width: 400px
-    
-  }
 
-@media all and (min-width: 768px) {
+  
+    grid-template-areas:
+      "header header header"
+      "nav content side"
+      "footer footer footer";
+  
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: auto 1fr auto;
+    grid-gap: 2px;
+  
+    height: 100vh;
+  }
+  @media (max-width: 768px) {
     .container {
-        flex-direction: row;
-        flex-wrap: wrap;    
-    } 
-    header, 
-    footer {
-        width: 100%;
+      grid-template-areas:
+        "header"
+        "nav"
+        "content"
+        "side"
+        "footer";
+  
+      grid-template-columns: 1fr;
+      grid-template-rows:
+        auto /* Header */
+        minmax(75px, auto) /* Nav */
+        1fr /* Content */
+        minmax(75px, auto) /* Sidebar */
+        auto; /* Footer */
     }
-    main {
-        flex: 2;
-        order: 1;
-        min-height: 120vh;
+  
+    nav, aside {
+      margin: 0;
     }
-    
-    nav {
-        order: 1;
-        flex: 1;
-    }
-    aside {
-        flex: 1;
-        order: 4;
-    }
-    footer {
-        order: 4;
-    }
-}
+  }

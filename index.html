@@ -1,30 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <link rel="stylesheet" href="grid.css">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CSS Layout - Holy Grail</title>
+    <link rel="stylesheet" href="style.css">
+  <script>
+  function show(shown, hidden) {
+    document.getElementById(shown).style.display='block';
+    document.getElementById(hidden).style.display='none';
+    return false;
+  }
+  </script>
   </head>
   <body>
-    <header>
-      <!-- Place a title here -->
-    </header>
-
-    <nav>
-      <!-- Place a list of links here -->
-    </nav>
-
-    <main>
-      <!-- Place a long text here -->
-    </main>
-
-    <aside>
-      <!-- Place a small image here -->
-    </aside>
-
-    <footer>
-      <!-- Place a copyright notice here -->
-    </footer>
+  
+    <div id="flexbox">
+      Content of page 1
+      <a href="flexbox.html" onclick="return show('Page2','Page1');"> Flexbox</a>
+    </div>
+  
+    <div id="grid">
+      Content of page 2
+      <a href="grid.html" onclick="return show('Page1','Page2');"> Grid</a>
+    </div>
+  
   </body>
-</html>
+  </html>
