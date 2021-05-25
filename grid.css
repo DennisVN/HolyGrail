@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+/* RESET */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+/* COLORS and FONTS */
+body {
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    line-height: 3;
+}
+header {
+    background: rgb(12, 12, 12);
+}
+
+nav {
+    background: forestgreen;
+}
+
+main {
+    background: darkslateblue;
+}
+
+aside {
+    background: dodgerblue;
+}
+nav {
+    background: forestgreen;
+}
+
+footer {
+    background: deeppink;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+/* mobile flexbox*/
+.container {
+    display: grid;
+    min-width: 400px
+    
+  }
+
+@media all and (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        flex-wrap: wrap;    
+    } 
+    header, 
+    footer {
+        width: 100%;
+    }
+    main {
+        flex: 2;
+        order: 1;
+        min-height: 120vh;
+    }
+    
+    nav {
+        order: 1;
+        flex: 1;
+    }
+    aside {
+        flex: 1;
+        order: 4;
+    }
+    footer {
+        order: 4;
+    }
+}
