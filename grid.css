@@ -26,6 +26,8 @@ nav {
 main {
     background: darkslateblue;
     grid-area: content;
+    position: sticky;
+    
 }
 
 aside {
