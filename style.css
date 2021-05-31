@@ -17,7 +17,7 @@ body {
 
 @media all and (min-width: 768px) {
     #picca {
-        width: auto%;
+        width: auto;
         height: 100%;
     } 
 }

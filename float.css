@@ -19,11 +19,12 @@ body{
     background: #ccc;
 }
 .container{
-    
+    background: rgb(42, 19, 170);
     padding-left:200px;
     padding-right:150px;
 }
-.column{
+.nav{
+    background: rgb(95, 21, 21);
     min-height: 400px;
     float:left;
 }
